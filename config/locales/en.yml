@@ -20,4 +20,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  welcome: "Welcome to the TMS-49"
+  help: "Help"
+  tms49: "TMS-49"
+  views:
+    footer:
+      me: "Tran.Quang.Trung@framgia.com"
+    helper:
+      base_title: "Ruby on Rails Tutorial TMS-49"
+    header:
+      home: "Home"
