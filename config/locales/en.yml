@@ -23,6 +23,7 @@ en:
   welcome: "Welcome to the TMS-49"
   help: "Help"
   tms49: "TMS-49"
+  login: "Log in"
   views:
     footer:
       me: "Tran.Quang.Trung@framgia.com"
@@ -30,3 +31,10 @@ en:
       base_title: "Ruby on Rails Tutorial TMS-49"
     header:
       home: "Home"
+      signout: "Sign out"
+      admin: "Admin"
+      course: "Courses"
+      subject: "Subjects"
+      user: "User"
+      profile: "Profile"
+      setting: "Setting"
