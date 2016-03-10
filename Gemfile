@@ -17,6 +17,7 @@ gem "jbuilder", "2.2.3"
 gem "sdoc", "0.4.0", group: :doc
 gem "config"
 gem "devise"
+gem "cancancan", "~> 1.10"
 
 group :development, :test do
   gem "sqlite3", "1.3.9"
