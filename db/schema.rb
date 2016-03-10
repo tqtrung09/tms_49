@@ -11,7 +11,76 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160309072824) do
+ActiveRecord::Schema.define(version: 20160310013541) do
+
+  create_table "course_subjects", force: :cascade do |t|
+    t.integer  "status"
+    t.integer  "course_id"
+    t.integer  "subject_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "course_subjects", ["course_id"], name: "index_course_subjects_on_course_id"
+  add_index "course_subjects", ["subject_id"], name: "index_course_subjects_on_subject_id"
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "name"
+    t.string   "content"
+    t.integer  "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.string   "name"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string   "name"
+    t.string   "content"
+    t.integer  "subject_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "tasks", ["subject_id"], name: "index_tasks_on_subject_id"
+
+  create_table "user_courses", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "user_courses", ["course_id"], name: "index_user_courses_on_course_id"
+  add_index "user_courses", ["user_id"], name: "index_user_courses_on_user_id"
+
+  create_table "user_subjects", force: :cascade do |t|
+    t.integer  "status"
+    t.integer  "user_id"
+    t.integer  "course_subject_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "user_subjects", ["course_subject_id"], name: "index_user_subjects_on_course_subject_id"
+  add_index "user_subjects", ["user_id"], name: "index_user_subjects_on_user_id"
+
+  create_table "user_tasks", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "user_subject_id"
+    t.integer  "task_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "user_tasks", ["task_id"], name: "index_user_tasks_on_task_id"
+  add_index "user_tasks", ["user_id"], name: "index_user_tasks_on_user_id"
+  add_index "user_tasks", ["user_subject_id"], name: "index_user_tasks_on_user_subject_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
