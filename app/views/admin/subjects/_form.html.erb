@@ -1,0 +1,11 @@
+<%= form_for [:admin, @subject] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <%= f.label :subject %>
+  <%= f.text_field :name, class: "form-control" %><br />
+  <%= f.text_area :content, class: "form-control" %>
+  <%= f.fields_for :tasks do |task| %>
+    <%= render "task_fields", f: task %>
+  <% end %>
+  <p><%= link_to_add_fields t("add"), f, :tasks %></p>
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>
