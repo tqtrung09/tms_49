@@ -24,6 +24,13 @@ en:
   help: "Help"
   tms49: "TMS-49"
   login: "Log in"
+  remove: "Remove"
+  create: "Create"
+  update: "Update"
+  add: "Add fields"
+  edit: "Edit"
+  delete: "Delete"
+  confirm_delete: "Are you sure?"
   views:
     footer:
       me: "Tran.Quang.Trung@framgia.com"
@@ -38,3 +45,10 @@ en:
       user: "User"
       profile: "Profile"
       setting: "Setting"
+    subject:
+      task: "Task"
+      complete_create: "Complete add subject"
+      complete_update: "Complete update subject"
+    shared:
+      message_error: "The form contains"
+      error: "error"
