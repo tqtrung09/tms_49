@@ -1,6 +1,6 @@
 class Admin::CoursesController < ApplicationController
   load_and_authorize_resource
-  before_action :load_subjects, only: [:new, :create]
+  before_action :load_subjects, only: [:new, :create, :edit]
 
   def index
     @courses = @courses.paginate page: params[:page]
@@ -19,6 +19,23 @@ class Admin::CoursesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
+    if @course.update_attributes course_params
+      flash[:success] = t "views.course.complete_update"
+      redirect_to admin_courses_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @course.destroy
+    redirect_to admin_courses_path
   end
 
   private

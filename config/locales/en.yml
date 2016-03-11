@@ -57,3 +57,4 @@ en:
       complete_update: "Complete update course"
       subject: "All Subjects"
       course: "All Courses"
+      error_date: "Invalid date in form"
