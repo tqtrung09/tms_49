@@ -1,0 +1,7 @@
+<%= link_to t("create"), new_admin_course_path,
+  class: "btn btn-lg btn-primary" %>
+<%= will_paginate %>
+<ul class="users">
+  <%= render @courses %>
+</ul>
+<%= will_paginate %>

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get "help" => "static_pages#help"
 
   namespace :admin do
+    root "subjects#index"
     resources :subjects
+    resources :courses
   end
 end

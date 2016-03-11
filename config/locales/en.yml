@@ -52,3 +52,8 @@ en:
     shared:
       message_error: "The form contains"
       error: "error"
+    course:
+      complete_create: "Complete add course"
+      complete_update: "Complete update course"
+      subject: "All Subjects"
+      course: "All Courses"
