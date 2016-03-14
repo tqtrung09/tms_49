@@ -6,4 +6,11 @@
   <%= link_to t("delete"), admin_subject_path(subject),
     method: :delete, data: {confirm: t("confirm_delete")},
     class: "btn btn-lg btn-primary" %>
+  <% if subject.unfinish? %>
+    <%= link_to t("finish"), admin_subject_path(subject, status: :finish),
+      method: :put, class: "btn btn-lg btn-primary" %>
+  <% elsif subject.finish? %>
+    <%= link_to t("unfinish"), admin_subject_path(subject, status: :unfinish),
+      method: :put, class: "btn btn-lg btn-primary" %>
+  <% end %>
 </li>

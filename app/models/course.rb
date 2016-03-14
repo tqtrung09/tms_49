@@ -10,6 +10,7 @@ class Course < ActiveRecord::Base
   validates :end_date, presence: true
   validate :end_date_must_be_greater_than_start_date
 
+  enum status: {finish: 0, unfinish: 1}
   private
   def end_date_must_be_greater_than_start_date
     errors.add :base, I18n.t("views.course.error_date") if
