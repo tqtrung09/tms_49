@@ -31,6 +31,10 @@ en:
   edit: "Edit"
   delete: "Delete"
   confirm_delete: "Are you sure?"
+  finish: "Finish"
+  unfinish: "Unfinish"
+  update_status_finish: "Change status of is finish"
+  update_status_unfinish: "Change status of is unfinish"
   views:
     footer:
       me: "Tran.Quang.Trung@framgia.com"

@@ -8,4 +8,6 @@ class Subject < ActiveRecord::Base
 
   validates :name, presence: true, length: {maximum: 50}
   validates :content, presence: true, length: {maximum: 250}
+
+  enum status: {finish: 0, unfinish: 1}
 end

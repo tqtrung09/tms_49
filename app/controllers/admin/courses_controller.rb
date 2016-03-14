@@ -25,11 +25,18 @@ class Admin::CoursesController < ApplicationController
   end
 
   def update
-    if @course.update_attributes course_params
-      flash[:success] = t "views.course.complete_update"
+    if params[:status]
+      @course.update_attributes status: params[:status]
+      flash[:success] = params[:status] == "finish" ?
+        t("update_status_finish") : t("update_status_unfinish")
       redirect_to admin_courses_path
     else
-      render :edit
+      if @course.update_attributes course_params
+        flash[:success] = t "views.course.complete_update"
+        redirect_to admin_courses_path
+      else
+        render :edit
+      end
     end
   end
 
