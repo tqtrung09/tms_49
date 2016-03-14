@@ -1,0 +1,26 @@
+<%= form_for @course, url: admin_course_user_courses_path do |f| %>
+  <div class="row">
+    <%= render "shared/error_messages", object: @course %>
+    <aside class="col-md-5">
+      <h1><%= t "views.course.course" %></h1>
+      <section class="user_info">
+        <%= @course.name %><br />
+        <%= @course.content %><br />
+        <%= f.submit t("views.course.assign_trainee"),
+          class: "btn btn-primary" %>
+      </section>
+    </aside>
+    <div class="col-md-3">
+      <h1> <%= t "views.course.user" %></h1><br />
+      <%= f.collection_check_boxes :user_ids,
+        @users, :id, :name do |user| %>
+        <div class="row">
+          <%= user.label do %>
+            <%= user.check_box %>
+            <%= user.text %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

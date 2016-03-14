@@ -58,3 +58,8 @@ en:
       subject: "All Subjects"
       course: "All Courses"
       error_date: "Invalid date in form"
+      add_trainee: "Add Trainee"
+      user: "All Users"
+      complete_update_trainee: "Add Trainee Success!"
+      fails_update_trainee: "Add Trainee Fails!"
+      assign_trainee: "Assign Trainee"

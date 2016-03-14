@@ -1,6 +1,9 @@
 <li>
   <h3><%= course.name %></h3>
   <p><%= course.content %></p>
+  <%= link_to t("views.course.add_trainee"),
+    admin_course_user_courses_path(course),
+    class: "btn btn-lg btn-primary" %>
   <%= link_to t("edit"), edit_admin_course_path(course),
     class: "btn btn-lg btn-primary" %>
   <%= link_to t("delete"), admin_course_path(course),
