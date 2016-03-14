@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   namespace :admin do
     root "subjects#index"
     resources :subjects
-    resources :courses
+    resources :courses do
+      resource :user_courses
+    end
   end
 end
