@@ -35,6 +35,8 @@ en:
   unfinish: "Unfinish"
   update_status_finish: "Change status of is finish"
   update_status_unfinish: "Change status of is unfinish"
+  hi: "Hi"
+  subject: "Trainee has assign for course!"
   views:
     footer:
       me: "Tran.Quang.Trung@framgia.com"
