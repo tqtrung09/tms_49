@@ -1,0 +1,8 @@
+<p>
+  <%= @greeting %>
+</p>
+<p>
+  <% @user_trainees.each do |user_trainee| %>
+    <h3><%= user_trainee.user.name %></h3>
+  <% end %>
+</p>

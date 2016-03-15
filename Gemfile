@@ -22,6 +22,7 @@ gem "sidekiq"
 gem "sinatra", require: false
 gem "slim"
 gem "figaro"
+gem "whenever", require: false
 
 group :development, :test do
   gem "sqlite3", "1.3.9"
