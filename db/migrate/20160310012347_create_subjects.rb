@@ -3,7 +3,7 @@ class CreateSubjects < ActiveRecord::Migration
     create_table :subjects do |t|
       t.string :name
       t.string :content
-      t.integer :status
+      t.integer :status, default: 0
 
       t.timestamps null: false
     end

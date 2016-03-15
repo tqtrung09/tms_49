@@ -1,3 +1,4 @@
+require "sidekiq/web"
 Rails.application.routes.draw do
 
   devise_for :users
@@ -11,4 +12,5 @@ Rails.application.routes.draw do
       resource :user_courses
     end
   end
+  mount Sidekiq::Web, at: "/sidekiq"
 end

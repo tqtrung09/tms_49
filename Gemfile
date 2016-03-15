@@ -18,6 +18,10 @@ gem "sdoc", "0.4.0", group: :doc
 gem "config"
 gem "devise"
 gem "cancancan", "~> 1.10"
+gem "sidekiq"
+gem "sinatra", require: false
+gem "slim"
+gem "figaro"
 
 group :development, :test do
   gem "sqlite3", "1.3.9"

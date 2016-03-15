@@ -7,6 +7,7 @@ class Admin::UserCoursesController < ApplicationController
 
   def update
     if @course.update_attributes course_params
+      TraineeWorker.perform_async params[:course][:user_ids]
       flash[:success] = t "views.course.complete_update_trainee"
       redirect_to admin_courses_path
     else
