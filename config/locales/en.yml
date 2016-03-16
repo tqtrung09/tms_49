@@ -32,9 +32,9 @@ en:
   delete: "Delete"
   confirm_delete: "Are you sure?"
   finish: "Finish"
-  unfinish: "Unfinish"
+  start: "Start"
   update_status_finish: "Change status of is finish"
-  update_status_unfinish: "Change status of is unfinish"
+  update_status_start: "Change status of is start"
   hi: "Hi"
   subject: "Trainee has assign for course!"
   views:
@@ -69,3 +69,5 @@ en:
       complete_update_trainee: "Add Trainee Success!"
       fails_update_trainee: "Add Trainee Fails!"
       assign_trainee: "Assign Trainee"
+      subject_name: "Subject Name"
+      subject_content: "Subject Content"

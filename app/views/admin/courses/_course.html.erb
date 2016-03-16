@@ -9,11 +9,11 @@
   <%= link_to t("delete"), admin_course_path(course),
     method: :delete, data: {confirm: t("confirm_delete")},
     class: "btn btn-lg btn-primary" %>
-  <% if course.unfinish? %>
-    <%= link_to t("finish"), admin_course_path(course, status: :finish),
+  <% if course.start? %>
+    <%= link_to t("start"), admin_course_path(course, status: :finish),
       method: :put, class: "btn btn-lg btn-primary" %>
   <% elsif course.finish? %>
-    <%= link_to t("unfinish"), admin_course_path(course, status: :unfinish),
+    <%= link_to t("finish"), admin_course_path(course, status: :start),
       method: :put, class: "btn btn-lg btn-primary" %>
   <% end %>
 </li>
