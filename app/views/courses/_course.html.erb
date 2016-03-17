@@ -1,0 +1,6 @@
+<li>
+  <h3><%= course.name %></h3>
+  <p><%= course.content %></p>
+  <%= link_to t("learn"), course_path(course),
+    class: "btn btn-lg btn-primary" %>
+</li>

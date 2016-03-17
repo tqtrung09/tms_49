@@ -63,11 +63,11 @@ ActiveRecord::Schema.define(version: 20160310013541) do
   add_index "user_courses", ["user_id"], name: "index_user_courses_on_user_id"
 
   create_table "user_subjects", force: :cascade do |t|
-    t.integer  "status"
+    t.integer  "status",            default: 0
     t.integer  "user_id"
     t.integer  "course_subject_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   add_index "user_subjects", ["course_subject_id"], name: "index_user_subjects_on_course_subject_id"
