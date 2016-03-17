@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <table class="table table-hover">
+      <th><%= t "views.course.subject_name" %></th>
+      <th><%= t "views.course.subject_content" %></th>
+      <th></th>
+      <th></th>
+      <% @course_subjects.each do |course_subject| %>
+        <tr>
+          <td><%= course_subject.subject.name %></td>
+          <td><%= course_subject.subject.content %> </td>
+          <td>
+            <% if course_subject.start? %>
+              <%= link_to t("start"), admin_course_course_subjects_path(
+                @course, course_subject_id: course_subject,
+                status: :finish), method: :put %>
+            <% elsif course_subject.finish? %>
+              <%= link_to t("finish"), admin_course_course_subjects_path(
+                @course, course_subject_id: course_subject,
+                status: :start), method: :put %>
+            <% end %>
+          </td>
+          <td></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+</div>

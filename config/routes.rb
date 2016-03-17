@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :subjects
     resources :courses do
       resource :user_courses
+      resource :course_subjects, only: [:update]
     end
   end
   mount Sidekiq::Web, at: "/sidekiq"

@@ -4,4 +4,6 @@ class CourseSubject < ActiveRecord::Base
 
   has_many :user_subjects, dependent: :destroy
   has_many :users, through: :user_subjects, dependent: :destroy
+
+  enum status: {start: 0, finish: 1}
 end

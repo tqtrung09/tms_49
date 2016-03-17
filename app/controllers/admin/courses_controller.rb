@@ -10,6 +10,7 @@ class Admin::CoursesController < ApplicationController
   end
 
   def show
+    @course_subjects = @course.course_subjects.paginate page: params[:page]
   end
 
   def create
@@ -27,9 +28,7 @@ class Admin::CoursesController < ApplicationController
   def update
     if params[:status]
       @course.update_attributes status: params[:status]
-      flash[:success] = params[:status] == "finish" ?
-        t("update_status_finish") : t("update_status_unfinish")
-      redirect_to admin_courses_path
+      redirect_to params[:status] == "start" ? admin_courses_path : [:admin, @course]
     else
       if @course.update_attributes course_params
         flash[:success] = t "views.course.complete_update"
