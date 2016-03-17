@@ -37,6 +37,8 @@ en:
   update_status_start: "Change status of is start"
   hi: "Hi"
   subject: "Trainee has assign for course!"
+  start: "Start"
+  learn: "Learn"
   views:
     footer:
       me: "Tran.Quang.Trung@framgia.com"
@@ -51,6 +53,7 @@ en:
       user: "User"
       profile: "Profile"
       setting: "Setting"
+      course: "Courses"
     subject:
       task: "Task"
       complete_create: "Complete add subject"
