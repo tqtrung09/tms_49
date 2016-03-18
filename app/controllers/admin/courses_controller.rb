@@ -34,6 +34,7 @@ class Admin::CoursesController < ApplicationController
         flash[:success] = t "views.course.complete_update"
         redirect_to admin_courses_path
       else
+        load_subjects
         render :edit
       end
     end
