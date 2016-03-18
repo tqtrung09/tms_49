@@ -8,7 +8,7 @@
       <% @course_subjects.each do |course_subject| %>
         <tr>
           <td><%= course_subject.subject.name %></td>
-          <td><%= course_subject.subject.content %> </td>
+          <td><%= course_subject.subject.content %></td>
           <td>
             <% if course_subject.start? %>
               <%= link_to t("start"), admin_course_course_subjects_path(
@@ -25,5 +25,4 @@
       <% end %>
     </table>
   </div>
-
 </div>

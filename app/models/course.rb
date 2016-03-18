@@ -15,8 +15,9 @@ class Course < ActiveRecord::Base
   enum status: {start: 0, finish: 1}
   private
   def end_date_must_be_greater_than_start_date
-    errors.add :base, I18n.t("views.course.error_date") if
-      self.end_date < self.start_date
+    if self.end_date < self.start_date
+      errors.add :base, I18n.t("views.course.error_date")
+    end
   end
 
   def create_user_subject

@@ -2,7 +2,7 @@ class Admin::UserCoursesController < ApplicationController
   load_and_authorize_resource :course
 
   def show
-    @users = User.all
+    @users = User.trainee
   end
 
   def update
