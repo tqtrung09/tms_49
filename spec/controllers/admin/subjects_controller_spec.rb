@@ -27,7 +27,6 @@ describe Admin::SubjectsController, type: :controller do
       allow(Subject).to receive(:new).and_return subject
     end
 
-
     context "when the subject fails to save" do
       before do
         allow(subject).to receive(:save).and_return false

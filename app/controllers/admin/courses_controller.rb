@@ -26,17 +26,13 @@ class Admin::CoursesController < ApplicationController
   end
 
   def update
-    if params[:status]
-      @course.update_attributes status: params[:status]
-      redirect_to params[:status] == "start" ? admin_courses_path : [:admin, @course]
+    if @course.update_attributes course_params
+      flash[:success] = t "views.course.complete_update"
+      redirect_to @course.status == "finish" ?
+        [:admin, @course] : admin_courses_path
     else
-      if @course.update_attributes course_params
-        flash[:success] = t "views.course.complete_update"
-        redirect_to admin_courses_path
-      else
-        load_subjects
-        render :edit
-      end
+      load_subjects
+      render :edit
     end
   end
 
@@ -47,7 +43,7 @@ class Admin::CoursesController < ApplicationController
 
   private
   def course_params
-    params.require(:course).permit :name, :content,
+    params.require(:course).permit :name, :content, :status,
       :start_date, :end_date, subject_ids: []
   end
 
