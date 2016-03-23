@@ -24,18 +24,11 @@ class Admin::SubjectsController < ApplicationController
   end
 
   def update
-    if params[:status]
-      @subject.update_attributes status: params[:status]
-      flash[:success] = params[:status] == "finish" ?
-        t("update_status_finish") : t("update_status_unfinish")
+    if @subject.update_attributes subject_params
+      flash[:success] = t "views.subject.complete_update"
       redirect_to admin_subjects_path
     else
-      if @subject.update_attributes subject_params
-        flash[:success] = t "views.subject.complete_update"
-        redirect_to admin_subjects_path
-      else
-        render :edit
-      end
+      render :edit
     end
   end
 
