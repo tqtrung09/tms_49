@@ -42,6 +42,7 @@ group :test do
   gem "simplecov", require: false
   gem "shoulda-matchers", "~> 3.1"
   gem "rspec-rails"
+  gem "rspec-activemodel-mocks"
 end
 
 group :production do
