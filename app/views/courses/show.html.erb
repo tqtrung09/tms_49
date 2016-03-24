@@ -12,8 +12,8 @@
           <td>
             <% if current_user.load_user_subject_of(course_subject).start? %>
               <%= link_to t("finish"), user_subject_path(
-                current_user.load_user_subject_of course_subject),
-                status: :finish, method: :put %>
+                current_user.load_user_subject_of(course_subject),
+                "user_subject[status]": :finish), method: :put %>
             <% end %>
           </td>
           <td></td>

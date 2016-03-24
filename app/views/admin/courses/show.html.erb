@@ -13,11 +13,11 @@
             <% if course_subject.start? %>
               <%= link_to t("start"), admin_course_course_subjects_path(
                 @course, course_subject_id: course_subject,
-                status: :finish), method: :put %>
+                "course_subject[status]": :finish), method: :put %>
             <% elsif course_subject.finish? %>
               <%= link_to t("finish"), admin_course_course_subjects_path(
                 @course, course_subject_id: course_subject,
-                status: :start), method: :put %>
+                "course_subject[status]": :start), method: :put %>
             <% end %>
           </td>
           <td></td>
