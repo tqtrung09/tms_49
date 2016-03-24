@@ -43,6 +43,7 @@ group :test do
   gem "shoulda-matchers", "~> 3.1"
   gem "rspec-rails"
   gem "rspec-activemodel-mocks"
+  gem "capybara"
 end
 
 group :production do
