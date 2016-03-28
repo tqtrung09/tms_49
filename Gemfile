@@ -23,6 +23,8 @@ gem "sinatra", require: false
 gem "slim"
 gem "figaro"
 gem "whenever", require: false
+gem "pry"
+gem "kaminari"
 
 group :development, :test do
   gem "sqlite3", "1.3.9"

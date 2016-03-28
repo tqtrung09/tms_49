@@ -15,3 +15,17 @@ User.create! name: "Tran Quang Trung 1",
   email: "tqtrung09@gmail.com",
   password: "12345678",
   password_confirmation: "12345678"
+
+35.times do |n|
+  name  = Faker::Name.name
+  content = Faker::Lorem.sentence
+  start_date = Date.today - 2.days
+  end_date = Date.today
+  status = 0
+  Course.create!(name:  name,
+               content: content,
+               start_date: start_date,
+               end_date: end_date,
+               status: status)
+end
+
