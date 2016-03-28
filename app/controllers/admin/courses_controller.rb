@@ -3,7 +3,7 @@ class Admin::CoursesController < ApplicationController
   before_action :load_subjects, only: [:new, :create, :edit]
 
   def index
-    @courses = @courses.paginate page: params[:page]
+    @courses = @courses.order("name").page(params[:page]).per_page 10
   end
 
   def new
