@@ -3,7 +3,8 @@ class Admin::CoursesController < ApplicationController
   before_action :load_subjects, only: [:new, :create, :edit]
 
   def index
-    @courses = @courses.order("name").page(params[:page]).per_page 10
+    @q = @courses.ransack params[:q]
+    @courses = @q.result.order("name").page(params[:page]).per_page 10
   end
 
   def new
