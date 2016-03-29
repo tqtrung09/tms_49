@@ -39,6 +39,7 @@ en:
   subject: "Trainee has assign for course!"
   start: "Start"
   learn: "Learn"
+  search: "Search"
   views:
     footer:
       me: "Tran.Quang.Trung@framgia.com"
@@ -74,6 +75,7 @@ en:
       assign_trainee: "Assign Trainee"
       subject_name: "Subject Name"
       subject_content: "Subject Content"
+      course_name: "Course name"
     kaminari:
       next: "next"
       previous: "previous"
