@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :courses do
       resource :user_courses
       resource :course_subjects, only: [:update]
+      collection {post :search, to: "courses#index"}
     end
   end
   mount Sidekiq::Web, at: "/sidekiq"

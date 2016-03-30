@@ -6,7 +6,7 @@
   </li>
 <% else %>
   <li class="waves-effect">
-    <%= link_to url, :rel => 'next', :remote => remote do %>
+    <%= link_to url, :rel => 'next', :remote => remote, method: :post do %>
       <i class="material-icons"><%= t "views.kaminari.next" %></i>
     <% end %>
   </li>

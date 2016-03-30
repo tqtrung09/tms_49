@@ -3,8 +3,14 @@ class Admin::CoursesController < ApplicationController
   before_action :load_subjects, only: [:new, :create, :edit]
 
   def index
+    @course_export = @courses
     @q = @courses.ransack params[:q]
     @courses = @q.result.order("name").page(params[:page]).per_page 10
+    respond_to do |format|
+      format.html
+      format.xls
+      format.js
+    end
   end
 
   def new

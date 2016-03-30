@@ -1,13 +1,17 @@
 <%= link_to t("create"), new_admin_course_path,
   class: "btn btn-lg btn-primary" %><br />
 <div class="div_search">
-<%= search_form_for [:admin, @q], class: "form-inline" do |f| %>
+<%= search_form_for [:admin, @q], url: search_admin_courses_path,
+  method: :post, class: "form-inline" do |f| %>
   <div class="form-group">
     <%= f.label :name_cont, t("course_name") %>
     <%= f.text_field :name_cont, class: "form-control" %><br>
     <%= f.submit t("search"), class: "btn btn-default" %>
   </div>
 <% end %>
+<br />
+<%= link_to t("excel"), admin_courses_path(format: "xls"),
+  class: "btn btn-lg btn-primary" %>
 </div>
 <div id="paginator">
   <%= paginate @courses, remote: true %>

@@ -13,6 +13,7 @@ class Course < ActiveRecord::Base
   after_update :create_user_subject
 
   enum status: {start: 0, finish: 1}
+
   private
   def end_date_must_be_greater_than_start_date
     if self.end_date < self.start_date
